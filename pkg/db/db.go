@@ -5,6 +5,7 @@ import (
 	"gim/config"
 	"gim/pkg/logger"
 	"gim/pkg/util"
+	"strings"
 
 	"github.com/go-redis/redis"
 	"github.com/jinzhu/gorm"
@@ -38,12 +39,16 @@ func InitMysql(dataSource string) {
 
 // InitRedis 初始化Redis
 func InitRedis(addr, password string) {
+	address :=strings.Split(addr, ",")
 	logger.Logger.Info("init redis")
-	RedisCli = redis.NewClient(&redis.Options{
-		Addr:     addr,
-		DB:       0,
-		Password: password,
+	RedisCli := redis.NewClusterClient(&redis.ClusterOptions{
+		Addrs: address,
 	})
+	//RedisCli = redis.NewClient(&redis.Options{
+	//	Addr:     addr,
+	//	DB:       0,
+	//	Password: password,
+	//})
 
 	_, err := RedisCli.Ping().Result()
 	if err != nil {

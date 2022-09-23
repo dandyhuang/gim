@@ -9,10 +9,10 @@ import (
 )
 
 type RedisUtil struct {
-	client *redis.Client
+	client *redis.ClusterClient
 }
 
-func NewRedisUtil(client *redis.Client) *RedisUtil {
+func NewRedisUtil(client *redis.ClusterClient) *RedisUtil {
 	return &RedisUtil{client: client}
 }
 
