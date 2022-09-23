@@ -8,8 +8,8 @@ import (
 
 func initLocalConf() {
 	Config = config{
-		MySQL:         "root:gim123456@tcp(111.229.238.28:3306)/gim?charset=utf8&parseTime=true",
-		RedisIP:       "111.229.238.28:6379",
+		MySQL:         "rtrs:Rtrs@2018++@tcp(10.192.9.23:11003)/gim?charset=utf8&parseTime=true",
+		RedisIP:       "game-redis-pre-pre0.redis.dba.dandy.lan.:11282,game-redis-pre-pre1.redis.dba.dandy.lan.:11283,game-redis-pre-pre2.redis.dba.dandy.lan.:11284",
 		RedisPassword: "alber123456",
 
 		ConnectRPCAddr:  "addrs:///127.0.0.1:50000",
