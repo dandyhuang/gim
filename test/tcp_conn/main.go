@@ -71,6 +71,7 @@ func (c *TcpClient) Start() {
 		return
 	}
 
+
 	c.codec = codecFactory.NewCodec(connect)
 	c.Conn = connect
 

@@ -15,7 +15,7 @@ import (
 
 var (
 	DB        *gorm.DB
-	RedisCli  *redis.Client
+	RedisCli  *redis.ClusterClient
 	RedisUtil *util.RedisUtil
 )
 
